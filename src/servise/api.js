@@ -48,8 +48,8 @@ export const getMoviesCredits = async movieId => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
     );
-    // console.log(data.credits);
-    return data.credits;
+    // console.log(data.cast);
+    return data.cast;
   } catch (error) {
     throw new Error('');
   }
