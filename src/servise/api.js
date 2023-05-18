@@ -11,7 +11,7 @@ export async function getTrendingMovies() {
     );
     return data;
   } catch (error) {
-    throw new Error('');
+    console.log('Error: ', error);
   }
 }
 //search/search-movies пошук фільму за ключовим словом на сторінці фільмів.
@@ -23,7 +23,7 @@ export async function getMovieByQuery(query) {
     );
     return data;
   } catch (error) {
-    throw new Error('');
+    console.log('Error: ', error);
   }
 }
 
@@ -37,7 +37,7 @@ export async function getMovieDetails(movieId) {
 
     return data;
   } catch (error) {
-    throw new Error('');
+    console.log('Error: ', error);
   }
 }
 
@@ -51,7 +51,7 @@ export const getMoviesCredits = async movieId => {
     // console.log(data.cast);
     return data.cast;
   } catch (error) {
-    throw new Error('');
+    console.log('Error: ', error);
   }
 };
 
@@ -64,6 +64,6 @@ export const getMoviesReviews = async movieId => {
     );
     return data.results;
   } catch (error) {
-    throw new Error('');
+    console.log('Error: ', error);
   }
 };
