@@ -19,7 +19,7 @@ export async function getTrendingMovies() {
 export async function getMovieByQuery(query) {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key${apiKey}&query=${query}&page=1&include_adult=false`
+      `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&page=1&include_adult=false`
     );
     return data;
   } catch (error) {
