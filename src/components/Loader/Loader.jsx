@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoaderBackdrop } from './Loader.styled';
+import { LoaderBackdrop } from '../Loader/Loader.styled';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 
 const Loader = () => {

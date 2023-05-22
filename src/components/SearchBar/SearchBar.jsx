@@ -1,4 +1,6 @@
+import React from 'react';
 import { Field, Form, Formik } from 'formik';
+import { Button, Input } from './SearchBar.styled';
 
 export const SearchBar = ({ onSubmit }) => {
   return (
@@ -12,13 +14,13 @@ export const SearchBar = ({ onSubmit }) => {
       >
         <Form>
           <Field
-            as="input"
+            as={Input}
             autoComplete="off"
             placeholder="Search movie..."
             name="query"
             autoFocus
           />
-          <button type="submit">Search</button>
+          <Button type="submit">Search</Button>
         </Form>
       </Formik>
     </>

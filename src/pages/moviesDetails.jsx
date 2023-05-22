@@ -20,7 +20,6 @@ const MovieDetails = () => {
         setError(null);
 
         const data = await getMovieDetails(movieId);
-        // console.log(data); // перевірити
         setMovieData(data);
       } catch (error) {
         console.log(error.message);
@@ -30,15 +29,10 @@ const MovieDetails = () => {
     })();
   }, [movieId]);
 
-  const Vote = movieData?.vote_average
-    ? `${(movieData?.vote_average * 10).toFixed(0)}%`
-    : 'Without vote';
-  const Genres = movieData?.genres?.map(genre => genre.name).join(', ');
-
   return (
     <>
       {isLoading && <Loader />}
-      {error && !isLoading && (
+      {error && (
         <h2 style={{ textAlign: 'center' }}>
           Try again. Something went wrong!
         </h2>
@@ -59,7 +53,7 @@ const MovieDetails = () => {
           </div>
           <div>
             <h2>{movieData?.title || movieData?.original_title}</h2>
-            <p>User score: {Vote}</p>
+            <p>User score: {movieData?.vote_average}</p>
             {movieData?.overview?.length > 0 && (
               <>
                 <h3>Overview</h3>
@@ -69,7 +63,7 @@ const MovieDetails = () => {
             {movieData?.genres?.length > 0 && (
               <>
                 <h4>Genres</h4>
-                <p>{Genres}</p>
+                <p>{movieData?.genres?.map(genre => genre.name).join(', ')}</p>
               </>
             )}
           </div>
@@ -80,14 +74,10 @@ const MovieDetails = () => {
         <nav>
           <ul>
             <li>
-              <NavLink to="cast" state={{ from: location }}>
-                Cast
-              </NavLink>
+              <NavLink to="cast">Cast</NavLink>
             </li>
             <li>
-              <NavLink to="reviews" state={{ from: location }}>
-                Reviews
-              </NavLink>
+              <NavLink to="reviews">Reviews</NavLink>
             </li>
           </ul>
         </nav>

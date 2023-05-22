@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Layout } from '../components/Layout/Layout';
-// import { MovieDetails } from 'servise/api';
 
 const Home = lazy(() => import('../pages/home'));
 const Movies = lazy(() => import('../pages/movies'));

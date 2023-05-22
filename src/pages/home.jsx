@@ -1,8 +1,8 @@
-import Loader from '../components/Loader/Loader';
-import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getTrendingMovies } from '../servise/api';
+import Loader from '../components/Loader/Loader';
+import { MoviesGallery } from '../components/MoviesGallery/MoviesGallery';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);

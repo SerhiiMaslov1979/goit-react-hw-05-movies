@@ -1,4 +1,4 @@
-import { MoviesGalleryItem } from 'components/MoviesGalleryItem/MoviesGalleryItem';
+import MoviesGalleryItem from 'components/MoviesGalleryItem/MoviesGalleryItem.1';
 import React from 'react';
 import { List } from './MoviesGallery.styled';
 import { useLocation } from 'react-router-dom';

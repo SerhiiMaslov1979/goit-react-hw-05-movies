@@ -1,6 +1,6 @@
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
-import { getMoviesReviews } from 'servise/api';
+import { getMoviesReviews } from '../../servise/api';
 import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
@@ -16,7 +16,6 @@ const Reviews = () => {
         setError(null);
 
         const data = await getMoviesReviews(movieId);
-        // console.log(data);
         setReviews(data);
       } catch (error) {
         console.log(error.message);

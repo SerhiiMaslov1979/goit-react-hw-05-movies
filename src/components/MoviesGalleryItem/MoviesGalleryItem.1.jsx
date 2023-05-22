@@ -1,12 +1,13 @@
 import React from 'react';
 import NoPoster from '../Image/sorry-image-not-available.jpg';
 import { Link, useLocation } from 'react-router-dom';
-import { Item, MovieTitle } from './MoviesGalleryItem.styled';
 
-export const MoviesGalleryItem = ({ movie: { poster_path, id, title } }) => {
+const MoviesGalleryItem = ({ movie }) => {
+  const { poster_path, id, title } = movie;
   const location = useLocation();
+
   return (
-    <Item>
+    <div>
       <Link to={`/movies/${id}`} state={{ from: location }}>
         <img
           src={
@@ -15,10 +16,11 @@ export const MoviesGalleryItem = ({ movie: { poster_path, id, title } }) => {
               : NoPoster
           }
           alt={title}
-          width="200"
+          width="250"
         />
-        <MovieTitle>{title}</MovieTitle>
+        <h3>{title}</h3>
       </Link>
-    </Item>
+    </div>
   );
 };
+export default MoviesGalleryItem;
